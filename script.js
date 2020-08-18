@@ -112,7 +112,7 @@ window.onload = () => {
     title2.style.transform = 'translateX(100px)';
     again.innerText = 'PLAY AGAIN'
     again.className = 'againP'
-    again.href = '/game.html'
+    again.href = '/index.html'
     status.appendChild(textS)
     status.appendChild(again)
       if (circleAdv.childNodes[0].classList[1] == 'rockk') {
@@ -148,7 +148,7 @@ window.onload = () => {
       status.className = 'status';
       again.innerText = 'PLAY AGAIN'
       again.className = 'againP'
-      again.href = '/game.html'
+      again.href = '/index.html'
       status.appendChild(textS)
       status.appendChild(again)
       if (circleAdv.childNodes[0].classList[1] == 'paperr') {
@@ -183,7 +183,7 @@ window.onload = () => {
       status.className = 'status';
       again.innerText = 'PLAY AGAIN'
       again.className = 'againP'
-      again.href = '/game.html'
+      again.href = '/index.html'
       status.appendChild(textS)
       status.appendChild(again)
       
