@@ -1,0 +1,474 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+body {
+  background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+}
+
+.logo-score {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30px;
+}
+.logo-score-wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+  padding: 15px;
+  border: 2px solid hsl(217, 16%, 45%);
+  border-radius: 10px;
+}
+
+.score {
+  background-color: white;
+  padding: 10px 45px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.score h4 {
+  color: hsl(229, 56%, 46%);
+  font-size: 10pt;
+  letter-spacing: 2px;
+  margin-top: 5px ;
+}
+.score h2 {
+  font-size: 40pt;
+  color: hsl(229, 25%, 31%);
+}
+.game {
+  display: flex;
+  justify-content: center;
+  margin: 80px 0;
+  position: relative;
+}
+
+.game-wrap {
+  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.paper, .scissors {
+  width: 50%;
+  justify-content: center;
+  display: flex;
+}
+.paperr, .scissorss {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+.circle img {
+  width: 60%;
+}
+
+.pp img, .rk img, .sc img{
+  width: 60%;
+}
+.rockk {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.img-wrapp {
+  background: white;
+  width: 180px;
+  height: 180px;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.rock {
+  margin-top: 80px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.img-wrap {
+  background: white;
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.img-wrap::before {
+  border-radius: 100%;
+  content: '';
+  top: -20px;
+  left: -20px;
+  bottom: -20px;
+  right: -20px;
+  position: absolute;
+  z-index: -1;
+}
+.img-wrapp::before {
+  border-radius: 100%;
+  content: '';
+  top: -20px;
+  left: -20px;
+  bottom: -20px;
+  right: -20px;
+  position: absolute;
+  z-index: -1;
+}
+
+.pp::before {
+  background-image: linear-gradient(to bottom, hsl(230, 89%, 62%) 0%, hsl(230, 89%, 65%) 100%);
+}
+
+.sc::before {
+  background-image: linear-gradient(to bottom, hsl(39, 89%, 49%) 0%, hsl(40, 84%, 53%) 100%);
+}
+
+.rk::before {
+  background-image: linear-gradient(to bottom, hsl(349, 71%, 52%) 0%, hsl(349, 70%, 56%) 100%);
+}
+.triangle {
+  position: absolute;
+  background-image: url('images/bg-triangle.svg');
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 277px;
+  z-index: -2;
+  top: 80px;
+
+}
+.rules {
+  display: flex;
+  justify-content: flex-end;
+}
+.rules a {
+  padding: 8px 35px;
+  border: 1px solid white;
+  margin: 0  30px 30px 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  border-radius: 5px;
+  letter-spacing: 1px;
+}
+
+.modal {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 400px;
+  background: white;
+  border-radius: 4px;
+  padding: 25px 40px;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  opacity: 0;
+  z-index: -11;
+}
+.mask {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.342);
+  z-index: 998;
+
+}
+.modal h3 {
+  letter-spacing: 2.5px;
+  font-size: 20pt;
+  color: hsl(229, 25%, 31%);
+  font-weight: bold;
+}
+
+.fa-times {
+  font-size: 22pt;
+  color: hsl(210, 1%, 73%);
+  cursor: pointer;
+}
+
+.img-rule-wrap {
+  width: 100%;
+  margin-top: 35px;
+}
+
+
+
+.game-hour {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+.game-hour h3{
+  font-size: 16pt;
+  text-align: center;
+  margin: 15px 0;
+  font-weight: 600;
+  color: white;
+  
+}
+.circle-sel {
+  width: 220px;
+  height: 220px;
+  background-color: rgba(0, 0, 0, 0.404);
+  margin: 0 100px;
+  border-radius: 50%;
+}
+
+.circle-adv {
+  width: 220px;
+  height: 220px;
+  background-color: rgba(0, 0, 0, 0.404);
+  margin: 0 100px;
+  border-radius: 50%;
+}
+
+.status {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 50%;
+  text-align: center;
+}
+.status h3 {
+  font-size: 40pt;
+  color: white;
+  margin: 15px 0;
+}
+.status a{
+  text-decoration: none;
+  padding: 7px 55px;
+  color: hsl(229, 25%, 31%);
+  background: white;
+  border-radius: 3px;
+  font-size: 15pt;
+}
+
+.againP:hover {
+  transition: 450ms;
+  color: rgb(182, 25, 25);
+}
+
+
+@media screen and (max-width: 995px) {
+  .logo-score-wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px;
+    border: 2px solid hsl(217, 16%, 45%);
+    border-radius: 10px;
+  }
+  .logo-score {
+    margin: 10px;
+  }
+  .game-wrap {
+    width: 100%;
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+  
+  }
+  .rules {
+    display: flex;
+    justify-content: center;
+  }
+  .rules a {
+    margin-top: 140px;
+  }
+
+  .img-wrap {
+    width: 120px;
+    height: 120px;
+    top: 60px;
+  }.game {
+    margin: 10px 0;
+  }
+
+  .game-hour {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: -30px;
+
+  }
+
+.your-picked, .house {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  .img-wrap {
+    width: 100px !important;
+    height: 100px !important;
+    left: 0px !important;
+  }
+  .choice {
+    position: relative;
+    left: 60px;
+    top: 0;
+  }
+  .img-wrap::before {
+  border-radius: 100%;
+  content: '';
+  top: -15px;
+  left: -15px;
+  bottom: -15px;
+  right: -15px;
+  position: absolute;
+  z-index: -3;
+}
+
+  .paperr, .scissorss {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+  }
+  .rockk {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .img-wrapp {
+    background: white;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+    cursor: pointer;
+  }
+  .img-wrap::before {
+    border-radius: 100%;
+    content: '';
+    top: -15px;
+    left: -15px;
+    bottom: -15px;
+    right: -15px;
+    position: absolute;
+    z-index: -1;
+  }
+  .img-wrapp::before {
+    border-radius: 100%;
+    content: '';
+    top: -15px;
+    left: -15px;
+    bottom: -15px;
+    right: -15px;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .circle-sel, .your-picked h3, .circle-adv, .house h3{
+    transform: translate(0) !important;
+  }
+
+  .house h3 {
+    font-size: 13pt;
+  }
+  .circle-sel {
+    width: 220px;
+    height: 220px;
+    background: transparent;
+    margin: 0 0px;
+    border-radius: 50%;
+  }
+  
+  .circle-adv {
+    width: 100px;
+    height: 100px;
+    background: transparent;
+    margin: 0 0px;
+    border-radius: 50%;
+  }
+
+  .status {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 50%;
+    text-align: center;
+  }
+  .status h3 {
+    font-size: 30pt;
+    color: white;
+    margin-top: 80px;
+  }
+  .status a{
+    text-decoration: none;
+    padding: 7px 0px;
+    color: hsl(229, 25%, 31%);
+    background: white;
+    border-radius: 3px;
+    font-size: 15pt;
+    width: 100%;
+    display: inline-block;
+  }
+
+
+  .modal {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: 0;
+    width: 100%;
+    height: 120%;
+    background: white;
+    border-radius: 4px;
+    padding: 25px 40px;
+  }
+  .modal h3 {
+    font-size: 38pt;
+    text-align: center;
+    width: 100%;
+  }
+  .fa-times {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 30pt;
+  }
+}
